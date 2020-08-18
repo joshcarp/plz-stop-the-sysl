@@ -1,0 +1,12 @@
+genCode:
+  upstream:
+    http:
+      common:
+        hostName: localhost
+        port: 5751
+  downstream:
+    visa:
+      serviceURL: http://localhost:1337
+
+app:
+  startingBalance: 1000

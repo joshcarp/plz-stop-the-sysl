@@ -1,0 +1,8 @@
+.dockerignore
+.git
+config.yaml
+Dockerfile
+Makefile
+model.json
+Procfile
+README.md

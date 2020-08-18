@@ -1,0 +1,51 @@
+import mastercard.yaml as MasterCard.MasterCard ~openapi
+
+PaymentServer:
+    @package="PaymentServer"
+    @description =:
+        | This server handles all the payment related endpoints.
+
+    /pay:
+        POST (instruction <: PaymentInstruction [~body]):
+            @sql_makePayment =:
+                |UPDATE Account
+                |SET    balance = balance - ?
+                |WHERE  accountId = 1
+            Visa <- POST /pay
+            MasterCard <- POST /pay
+            return ok <: PaymentResponse
+
+    /balance:
+        GET:
+            @sql_getBalance =:
+                |SELECT balance
+                |FROM   Account
+                |WHERE  accountID = 1
+            @sql_insertBalance =:
+                |INSERT INTO Account (accountID, balance)
+                |VALUES (?, ?)
+            return ok <: Balance
+
+    !type PaymentInstruction:
+        accountNumber <: string
+        amount <: decimal
+
+    !type PaymentResponse:
+        message <: string
+
+    !type Balance:
+        amount <: int
+
+Visa[~external]:
+    # ~external specifies an external service
+    /pay:
+        POST (req <: PaymentData [~body]):
+            return ok <: ResponseData
+
+    !type ResponseData:
+        response <: string
+
+    !type PaymentData:
+        creditCardNumber <: string
+        amountInSubUnits <: int
+        currency <: string
