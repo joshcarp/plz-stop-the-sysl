@@ -1,0 +1,25 @@
+
+mypkg:
+    @package = "mypkg"
+    !type HelloRequest:
+        @description = ""
+        @source_path = "api.proto"
+        Content <: string:
+            @json_tag = "Content"
+            @rpcId = "1"
+    !type HelloResponse:
+        @description = ""
+        @source_path = "api.proto"
+        Content <: string:
+            @json_tag = "Content"
+            @rpcId = "1"
+
+myserver[~gRPC]:
+    @description = ""
+    @package = "mypkg"
+    @source_path = "api.proto"
+    Hello(input <: mypkg.HelloRequest)[~gRPC]:
+        @description = ""
+        @source_path = "api.proto"
+        return ok <: mypkg.HelloResponse
+

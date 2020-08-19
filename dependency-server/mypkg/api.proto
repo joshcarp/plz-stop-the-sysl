@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/joshcarp/dependency-server/mypkg/;mypkg";
+option java_multiple_files = true;
+option java_package = "com.joshcarp.mypkg";
+option java_outer_classname = "mypkg";
+
+package mypkg;
+
+service myserver {
+  rpc Hello(HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string Content = 1;
+}
+message HelloResponse {
+  string Content = 1;
+}
