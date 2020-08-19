@@ -1,0 +1,25 @@
+
+myserver[~gRPC]:
+    @description = ""
+    @package = "plzserver"
+    @source_path = "api.proto"
+    Hello(input <: plzserver.HelloRequest)[~gRPC]:
+        @description = ""
+        @source_path = "api.proto"
+        return ok <: plzserver.HelloResponse
+
+plzserver:
+    @package = "plzserver"
+    !type HelloRequest:
+        @description = ""
+        @source_path = "api.proto"
+        Content <: string:
+            @json_tag = "Content"
+            @rpcId = "1"
+    !type HelloResponse:
+        @description = ""
+        @source_path = "api.proto"
+        Content <: string:
+            @json_tag = "Content"
+            @rpcId = "1"
+

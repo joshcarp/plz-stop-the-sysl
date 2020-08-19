@@ -1,6 +1,6 @@
 
-mypkg:
-    @package = "mypkg"
+depserver:
+    @package = "depserver"
     !type HelloRequest:
         @description = ""
         @source_path = "api.proto"
@@ -14,12 +14,12 @@ mypkg:
             @json_tag = "Content"
             @rpcId = "1"
 
-myserver[~gRPC]:
+myserverdep[~gRPC]:
     @description = ""
-    @package = "mypkg"
+    @package = "depserver"
     @source_path = "api.proto"
-    Hello(input <: mypkg.HelloRequest)[~gRPC]:
+    Hello(input <: depserver.HelloRequest)[~gRPC]:
         @description = ""
         @source_path = "api.proto"
-        return ok <: mypkg.HelloResponse
+        return ok <: depserver.HelloResponse
 

@@ -1,4 +1,4 @@
-module github.com/anz-bank/conf-demo
+module github.com/joshcarp/plz-stop-the-sysl
 
 go 1.13
 
@@ -26,6 +26,7 @@ require (
 	github.com/mitchellh/mapstructure v1.3.3 // indirect
 	github.com/prometheus/common v0.12.0
 	github.com/rickb777/date v1.13.0
+	github.com/sirupsen/logrus v1.6.0
 	github.com/stretchr/objx v0.3.0 // indirect
 	github.com/yuin/goldmark v1.2.1 // indirect
 	golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de // indirect
