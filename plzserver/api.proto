@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/joshcarp/plz-stop-the-sysl/api/plzserver/;plzserver";
+option go_package = "github.com/joshcarp/plz-stop-the-sysl/plzserver/;plzserver";
 option java_multiple_files = true;
 option java_package = "com.joshcarp.plzserver";
 option java_outer_classname = "plzserver";

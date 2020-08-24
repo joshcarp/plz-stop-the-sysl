@@ -1,7 +1,7 @@
-import plzserver/index.sysl
+import index.sysl
 import downstream.sysl
 
 myserver:
-    @go_pb_package="github.com/joshcarp/plz-stop-the-sysl/api/plzserver"
+    #@go_pb_package="github.com/joshcarp/plz-stop-the-sysl/dependency-server/depserver"
     Hello:
         myserverdep <- Hello

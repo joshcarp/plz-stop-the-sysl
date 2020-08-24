@@ -144,7 +144,7 @@ const AppSpec = `{
      "s": ""
     },
     "go_pb_package": {
-     "s": "github.com/joshcarp/plz-stop-the-sysl/api/plzserver"
+     "s": "github.com/joshcarp/plz-stop-the-sysl/plzserver"
     },
     "package": {
      "s": "plzserver"
@@ -214,25 +214,25 @@ const AppSpec = `{
       },
       {
        "ret": {
-        "payload": "ok <: plzserver.HelloResponse"
+        "payload": "ok \u003c: plzserver.HelloResponse"
        }
       }
      ],
      "sourceContext": {
-      "file": "./plzserver/index.sysl",
+      "file": "./index.sysl",
       "start": {
-       "line": 6,
+       "line": 7,
        "col": 4
       },
       "end": {
-       "line": 11,
+       "line": 12,
        "col": 9
       }
      }
     }
    },
    "sourceContext": {
-    "file": "./plzserver/index.sysl",
+    "file": "./index.sysl",
     "start": {
      "line": 2,
      "col": 1
@@ -252,6 +252,9 @@ const AppSpec = `{
    "attrs": {
     "description": {
      "s": ""
+    },
+    "go_pb_package": {
+     "s": "github.com/joshcarp/plz-stop-the-sysl/dependency-server/depserver"
     },
     "package": {
      "s": "depserver"
@@ -311,18 +314,18 @@ const AppSpec = `{
      "stmt": [
       {
        "ret": {
-        "payload": "ok <: depserver.HelloResponse"
+        "payload": "ok \u003c: depserver.HelloResponse"
        }
       }
      ],
      "sourceContext": {
       "file": "./downstream.sysl",
       "start": {
-       "line": 21,
+       "line": 22,
        "col": 4
       },
       "end": {
-       "line": 26
+       "line": 27
       }
      }
     }
@@ -371,13 +374,13 @@ const AppSpec = `{
          }
         },
         "sourceContext": {
-         "file": "./plzserver/index.sysl",
+         "file": "./index.sysl",
          "start": {
-          "line": 18,
+          "line": 19,
           "col": 19
          },
          "end": {
-          "line": 19,
+          "line": 20,
           "col": 4
          }
         }
@@ -393,13 +396,13 @@ const AppSpec = `{
       }
      },
      "sourceContext": {
-      "file": "./plzserver/index.sysl",
+      "file": "./index.sysl",
       "start": {
-       "line": 15,
+       "line": 16,
        "col": 4
       },
       "end": {
-       "line": 19,
+       "line": 20,
        "col": 4
       }
      }
@@ -424,13 +427,13 @@ const AppSpec = `{
          }
         },
         "sourceContext": {
-         "file": "./plzserver/index.sysl",
+         "file": "./index.sysl",
          "start": {
-          "line": 24,
+          "line": 25,
           "col": 19
          },
          "end": {
-          "line": 26
+          "line": 27
          }
         }
        }
@@ -445,25 +448,25 @@ const AppSpec = `{
       }
      },
      "sourceContext": {
-      "file": "./plzserver/index.sysl",
+      "file": "./index.sysl",
       "start": {
-       "line": 21,
+       "line": 22,
        "col": 4
       },
       "end": {
-       "line": 26
+       "line": 27
       }
      }
     }
    },
    "sourceContext": {
-    "file": "./plzserver/index.sysl",
+    "file": "./index.sysl",
     "start": {
-     "line": 11,
+     "line": 12,
      "col": 1
     },
     "end": {
-     "line": 11
+     "line": 12
     }
    }
   }

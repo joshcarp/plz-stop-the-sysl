@@ -15,8 +15,9 @@ depserver:
             @rpcId = "1"
 
 myserverdep[~gRPC]:
+    @go_pb_package="github.com/joshcarp/plz-stop-the-sysl/dependency-server/depserver"
     @description = ""
-    @package = "depserver"
+    @package = "myserverdep"
     @source_path = "api.proto"
     Hello(input <: depserver.HelloRequest)[~gRPC]:
         @description = ""
