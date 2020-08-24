@@ -5,14 +5,20 @@ import (
 	"context"
 	"time"
 
-	pb "api.proto"
+	pb "github.com/joshcarp/plz-stop-the-sysl/dependency-server/depserver"
 
 	"google.golang.org/grpc"
 )
 
-// Client implements a client for myserverdep.
+// Service interface for Myserverdep.
+type Service interface {
+	// Hello ...
+	Hello(ctx context.Context, input *pb.HelloRequest) (*pb.HelloResponse, error)
+}
+
+// Client implements a client for Myserverdep.
 type Client struct {
-	client pb.myserverdepClient
+	client pb.MyserverdepClient
 	addr   string
 }
 
@@ -26,7 +32,7 @@ func NewClient(addr string, connTimeout time.Duration) (*Client, error) {
 		return nil, err
 	}
 
-	return &Client{pb.NewmyserverdepClient(conn), addr}, nil
+	return &Client{pb.NewMyserverdepClient(conn), addr}, nil
 }
 
 // Hello ...

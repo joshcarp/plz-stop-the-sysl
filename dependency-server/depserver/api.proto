@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/joshcarp/plz-stop-the-sysl/dependency-server/depserver/;depserver";
+option go_package = "github.com/joshcarp/plz-stop-the-sysl/dependency-server/;depserver";
 option java_multiple_files = true;
 option java_package = "com.joshcarp.depserver";
 option java_outer_classname = "depserver";
@@ -8,12 +8,12 @@ option java_outer_classname = "depserver";
 package depserver;
 
 service myserverdep {
-  rpc Hello(HelloRequest) returns (HelloResponse);
+  rpc Yello(YelloRequest) returns (YelloResponse);
 }
 
-message HelloRequest {
+message YelloRequest {
   string Content = 1;
 }
-message HelloResponse {
+message YelloResponse {
   string Content = 1;
 }
