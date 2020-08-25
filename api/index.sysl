@@ -2,6 +2,7 @@
 myserver[~gRPC]:
     @description = ""
     @package = "plzserver"
+    @go_pb_package="github.com/joshcarp/plz-stop-the-sysl/plzserver"
     @source_path = "api.proto"
     Hello(input <: plzserver.HelloRequest)[~gRPC]:
         @description = ""

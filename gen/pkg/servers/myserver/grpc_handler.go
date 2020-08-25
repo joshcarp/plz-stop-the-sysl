@@ -5,7 +5,8 @@ import (
 	"context"
 
 	"github.com/anz-bank/sysl-go/core"
-	pb "github.com/joshcarp/plz-stop-the-sysl/gen/pkg/servers/myserver/github.com/joshcarp/plz-stop-the-sysl/api/plzserver"
+	"github.com/joshcarp/plz-stop-the-sysl/gen/pkg/servers/myserver/depserver"
+	pb "github.com/joshcarp/plz-stop-the-sysl/plzserver"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -17,14 +18,14 @@ type GrpcServiceHandler struct {
 	pb.UnimplementedMyserverServer
 	genCallback               core.GrpcGenCallback
 	serviceInterface          *GrpcServiceInterface
-	depserverDepserverService depserver.myserverdepClient
+	depserverDepserverService depserver.Service
 }
 
 // NewGrpcServiceHandler for myserver
 func NewGrpcServiceHandler(
 	genCallback core.GrpcGenCallback,
 	serviceInterface *GrpcServiceInterface,
-	depserverDepserverService depserver.myserverdepClient,
+	depserverDepserverService depserver.Service,
 ) *GrpcServiceHandler {
 	return &GrpcServiceHandler{
 		genCallback:               genCallback,

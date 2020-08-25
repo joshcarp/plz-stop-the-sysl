@@ -6,15 +6,15 @@ import (
 	"time"
 
 	"github.com/anz-bank/sysl-go/config"
-	"github.com/joshcarp/plz-stop-the-sysl/gen/pkg/servers/myserver/depserver"
-	pb "github.com/joshcarp/plz-stop-the-sysl/gen/pkg/servers/myserver/github.com/joshcarp/plz-stop-the-sysl/api/plzserver"
+	"github.com/joshcarp/plz-stop-the-sysl/dependency-server/depserver"
+	pb "github.com/joshcarp/plz-stop-the-sysl/plzserver"
 
 	"google.golang.org/grpc"
 )
 
 // Hello Client
 type HelloClient struct {
-	DepserverHello func(ctx context.Context, req *depserver.HelloRequest, opts ...grpc.CallOption) (*depserver.DepserverHelloResponse, error)
+	DepserverHello func(ctx context.Context, req *depserver.HelloRequest, opts ...grpc.CallOption) (*depserver.HelloResponse, error)
 }
 
 // GrpcServiceInterface for myserver
