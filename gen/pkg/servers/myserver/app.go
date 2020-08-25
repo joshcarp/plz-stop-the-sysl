@@ -32,7 +32,6 @@ func BuildDownstreamClients(cfg *config.DefaultConfig) (*DownstreamClients, erro
 	if depserverErr != nil {
 		return nil, depserverErr
 	}
-
 	depserverClient := depserver.NewmyserverdepClient(depserverGRPCClient)
 
 	return &DownstreamClients{depserverClient: depserverClient}, err
